@@ -13,7 +13,7 @@ load_dotenv()
 
 pdf_text = load_pdf("docs/financial_report.pdf")
 csv_text = load_csv("docs/financial_data.csv")
-all_text = pdf_text + "\n" 
+all_text = pdf_text + "\n" + csv_text
 documents = [Document(page_content=all_text)]
 splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 docs = splitter.split_documents(documents)
